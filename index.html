@@ -41,14 +41,14 @@ div.letterSelecter {
 outline-style: ridge;
 outline-color: #FFB2C0;
 outline-width: 6px;
-margin: 2px;
+margin: 0px;
 }
 #box{
 outline-style: ridge;
 outline-color: #FFB2C0;
 outline-width: 6px;
 margin: 6px;
-width: 300px;
+width: 400px;
 }
 .tab {
     overflow: hidden;
@@ -79,15 +79,16 @@ width: 300px;
 .tabcontent {
     float: left;
     border: 4px ridge #FFB2C0;
-    width: 100%;
+    width: 98.5%;
 	height: 550px;
 }
 .column {
     float: left;
 }
 .column.side {
-    width: 15%;
+    width: 18%;
 	padding: 10px;
+	height: 530px;
 }
 .column.middle {
     width: 70%;
@@ -163,6 +164,12 @@ FFB2C0
 !-->
 
 <body style="background-color:#FFB2C0;">
+
+<CENTER>
+<FORM>
+<input type="button" value="Enter?" onClick="passWord()">
+</FORM>
+</CENTER>
 
 <div id="boxTop">
 <h1 align="center" style="font-size:60px">511 Cyberportal Walk</h1>
@@ -285,6 +292,26 @@ function openTab(evt, tabName) {
 function openLetter(letterId){
 
 }
+
+function passWord() {
+var testV = 1;
+var pass1 = prompt('Please Enter Your Password',' ');
+while (testV < 3) {
+if (!pass1) 
+history.go(-1);
+if (pass1.toLowerCase() == "mapow") {
+alert('Welcome Home :)');
+window.open('http://cyberportal.space');
+break;
+} 
+testV+=1;
+var pass1 = 
+prompt('Password Incorrect, Please Try Again.','Password');
+}
+if (pass1.toLowerCase()!="password" & testV ==3) 
+history.go(-1);
+return " ";
+} 
 
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
