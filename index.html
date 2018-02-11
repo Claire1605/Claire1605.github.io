@@ -5,15 +5,291 @@
   <meta charset="utf-8">
   <title>cyberportal</title>
   <meta name="description" content="cyberportal">
-  <meta name="viewport" content="width=device-width" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <style>
+body{
+background: url("pastelNeb1.jpg"); 
+  background-size: auto;
+}
+h1, h2, h3{
+color:#9be0f4;
+margin: 6px;
+}
+ul  {
+    list-style: square inside url("heart.png");
+}
+div.scrollbox {
+    background-color: #9be0f4;
+    width: 70%;
+    height: 80%;
+    overflow: scroll;
+	display: inline-block;
+	vertical-align: top;
+}
+div.letterSelecter {
+    background-color: #9be0f4;
+    width: 25%;
+    height: 80%;
+    overflow: scroll;
+	display: inline-block;
+	vertical-align: top;
+	align: right;
+}
+#boxTop{
+outline-style: ridge;
+outline-color: #FFB2C0;
+outline-width: 6px;
+margin: 2px;
+}
+#box{
+outline-style: ridge;
+outline-color: #FFB2C0;
+outline-width: 6px;
+margin: 6px;
+width: 300px;
+}
+.tab {
+    overflow: hidden;
+    border: 2px solid #FFB2C0;
+    background-color: #9be0f4;
+	width: 10%;
+	float: left;
+}
+.tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 28px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 30px;
+}
+.tab button:hover {
+    background-color: #ddd;
+}
+.tab button.active {
+    background-color: #ccc;
+}
+.tabcontent {
+    float: left;
+    border: 4px ridge #FFB2C0;
+    width: 100%;
+	height: 550px;
+}
+.column {
+    float: left;
+}
+.column.side {
+    width: 15%;
+	padding: 10px;
+}
+.column.middle {
+    width: 70%;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+@media (max-width: 600px) {
+    .column.side, .column.middle {
+        width: 100%;
+    }
+@media (max-width: 600px) {
+    .tab {
+        width: 100%;
+    }
+}
+
+div.gallery {
+    border: 1px solid #ccc;
+}
+
+div.gallery:hover {
+    border: 1px solid #777;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.responsive {
+    padding: 0 6px;
+    float: left;
+    width: 24.9999%;
+}
+
+@media only screen and (max-width: 700px){
+    .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .responsive {
+        width: 100%;
+    }
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 </style>
 
+<!--
+https://ryllcat21.deviantart.com/art/GIF-Pastel-Sky-706656912
+9be0f4
+FFB2C0
+!-->
+
 <body style="background-color:#FFB2C0;">
-<h1>511 Cyberportal Walk</h1>
-<p><3</p>
+
+<div id="boxTop">
+<h1 align="center" style="font-size:60px">511 Cyberportal Walk</h1>
+</div>
+
+<div class="row">
+	<!-- Tab links -->
+	<div class="tab">
+	  <button class="tablinks" onclick="openTab(event, 'mail')" id="defaultOpen">mail</button>
+	  <button class="tablinks" onclick="openTab(event, 'photos')">photos</button>
+	  <button class="tablinks" onclick="openTab(event, 'lists')">lists</button>
+	   <button class="tablinks" onclick="openTab(event, 'garden')" id="defaultOpen">garden</button>
+	  <button class="tablinks" onclick="openTab(event, 'stories')">stories</button>
+	  <button class="tablinks" onclick="openTab(event, 'game')">game</button>
+	</div>
+
+	<div class="column middle">
+		<div id="mail" class="tabcontent">
+		  <h3 align="center" style="font-size:30px">mail</h3>
+			<br>
+			<span>
+			<div class="scrollbox">Dear James, <br>I'm writing to tell you how much I love you. <br>Yours forever, Claire
+			</div>
+			<div class="letterSelecter">
+				<ul>
+				  <li onclick="openLetter(1)">Letter 1</li>
+				  <li onclick="openLetter(2)">Letter 2</li>
+				  <li onclick="openLetter(3)">Letter 3</li>
+				</ul>
+			</div>
+			</span>
+		</div>
+
+		<div id="photos" class="tabcontent">
+		   <h3 align="center" style="font-size:30px">photos</h3>
+		  <p>A photo album that we can actually upload photos to! They can have captions that we can add to and edit :)</p> 
+			<div class="responsive">
+			  <div class="gallery">
+				<a target="_blank" href="photo1.jpg">
+				  <img src="photo1.jpg" alt="photo1" width="300" height="200">
+				</a>
+				<div class="desc">At the top of Bristol :)</div>
+			  </div>
+			</div>
+
+			<div class="responsive">
+			  <div class="gallery">
+				<a target="_blank" href="photo2.jpg">
+				  <img src="photo2.jpeg" alt="photo2" width="300" height="200">
+				</a>
+				<div class="desc">Neon!</div>
+			  </div>
+			</div>
+
+			<div class="responsive">
+			  <div class="gallery">
+				<a target="_blank" href="photo3.jpg">
+				  <img src="photo3.jpg" alt="photo3" width="300" height="200">
+				</a>
+				<div class="desc">Cave adventures</div>
+			  </div>
+			</div>
+
+			<div class="responsive">
+			  <div class="gallery">
+				<a target="_blank" href="photo4.jpg">
+				  <img src="photo4.jpg" alt="photo4" width="300" height="200">
+				</a>
+				<div class="desc">Happy ^_^</div>
+			  </div>
+			</div>
+
+			<div class="clearfix"></div>
+		</div>
+
+		<div id="lists" class="tabcontent">
+		   <h3 align="center" style="font-size:30px">lists</h3>
+		  <p>I thought we could put lists here like the one you made for your family</p>
+		</div>
+
+		<div id="garden" class="tabcontent">
+		   <h3 align="center" style="font-size:30px">garden</h3>
+		  <p>I have vague ideas of spells and magic and growing seeds into flowers that we can give to each other.. maybe it's procedurally generated ascii art?</p>
+		</div>
+
+		<div id="stories" class="tabcontent">
+		   <h3 align="center" style="font-size:30px">stories</h3>
+		  <p>We can put all our polls, decastich's and other stories here :)</p> 
+		</div>
+
+		<div id="game" class="tabcontent">
+		   <h3 align="center" style="font-size:30px">game</h3>
+		  <p>Maybe the game that you've been talking about? Or a place for makesend?</p>
+		</div>    
+	</div>
+
+	 <div class="column side" id="boxTop" >
+		<h2 align="center" style="font-size:20px">talking</h2>
+		<p>
+		I assume a chat-system is quite hard... but, this is where it would go :p and underneath is a box for emojis including custom ones that we can upload and use
+		</p>
+	 </div>
+</div>
+
+<script>
+function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+function openLetter(letterId){
+
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
 </body>
 
 </html>
