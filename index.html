@@ -12,6 +12,9 @@
 body{
 background: url("pastelNeb1.jpg"); 
   background-size: auto;
+  font:16px Helvetica;
+  color: #9B2B7D;
+  text-align: center;
 }
 h1, h2, h3{
 color:#9be0f4;
@@ -20,6 +23,17 @@ margin: 6px;
 ul  {
     list-style: square inside url("heart.png");
 }
+form, p, span {
+    margin:0;
+    padding:0; }
+  
+input { font:12px arial; }
+  
+a {
+    color:#0000FF;
+    text-decoration:none; } 
+a:hover { text-decoration:underline; }
+
 div.scrollbox {
     background-color: #9be0f4;
     width: 70%;
@@ -50,6 +64,44 @@ outline-width: 6px;
 margin: 6px;
 width: 400px;
 }
+ 
+#wrapper, #loginform {
+    margin:0 auto;
+    padding-bottom:25px;
+    background:#FFB2C0;
+    width:100%;
+    border:2px solid #9be0f4; 
+	text-align: center;}
+  
+#loginform { padding-top:18px; }
+  
+#loginform p { margin: 5px; }
+  
+#chatbox {
+    text-align:left;
+    margin:0 auto;
+    margin-bottom:25px;
+    background:#fff;
+    height:250px;
+    width:90%;
+    border:1px solid #9be0f4;
+    overflow:auto; }
+  
+#usermsg {
+    width:90%;
+    border:2px solid #9be0f4;}
+  
+#submit { width: 60px; }
+  
+.error { color: #ff0000; }
+  
+#menu { padding:12.5px 25px 12.5px 25px; }
+  
+.welcome { float:left; }
+  
+.logout { float:right; }
+  
+.msgln { margin:0 0 2px 0; }
 .tab {
     overflow: hidden;
     border: 2px solid #FFB2C0;
@@ -172,7 +224,7 @@ FFB2C0
 </CENTER>
 
 <div id="boxTop">
-<h1 align="center" style="font-size:60px">511 Cyberportal Walk</h1>
+<h1 align="center" style="font-size:60px"><img src="aubergine2Small.png">511 Cyberportal Walk<img src="aubergine1Small.png"></h1>
 </div>
 
 <div class="row">
@@ -191,7 +243,7 @@ FFB2C0
 		  <h3 align="center" style="font-size:30px">mail</h3>
 			<br>
 			<span>
-			<div class="scrollbox">Dear James, <br>I'm writing to tell you how much I love you. <br>Yours forever, Claire
+			<div class="scrollbox">Dear James, <br>I'm writing to tell you how much I love you, how incredible you are, and how happy I am that we are able to share so much together. I made a (not-very-working) prototype of a website we could use for Cyberportal to create together and share our thoughts, plans and memories somewhere that belongs to us. It's pretty rough right now but hopefully we can work on it and make it something functional and nice for us! I love you so much, James. Among the million things I want to thank you for and that I love you for, thank you for keeping my creative spirit flowing every day! <br>Yours forever, Claire
 			</div>
 			<div class="letterSelecter">
 				<ul>
@@ -267,13 +319,33 @@ FFB2C0
 	</div>
 
 	 <div class="column side" id="boxTop" >
-		<h2 align="center" style="font-size:20px">talking</h2>
-		<p>
-		I assume a chat-system is quite hard... but, this is where it would go :p and underneath is a box for emojis including custom ones that we can upload and use
-		</p>
+		<h2 align="center" style="font-size:30px">chat</h2>
+		<br>
+			<div id="wrapper">
+				<div id="menu">
+					<p class="welcome"><3 <3 <3<b></b></p>
+					<!--<p class="logout"><a id="exit" href="#">Exit Chat</a></p> !-->
+					<div style="clear:both"></div>
+				</div>
+				<div id="chatbox">
+					I assume a chat-system is quite hard... but, this is where it would go :p and underneath would be a box for emojis including custom ones that we can upload and use... ?
+				</div>
+				<form name="message" action="">
+					<input name="usermsg" type="text" id="usermsg" size="63" />
+					<input name="submitmsg" type="submit"  id="submitmsg" value="Send" />
+				</form>
+			</div>
 	 </div>
+	
 </div>
 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+<script type="text/javascript">
+// jQuery Document
+$(document).ready(function(){
+ 
+});
+</script>
 <script>
 function openTab(evt, tabName) {
     var i, tabcontent, tablinks;
