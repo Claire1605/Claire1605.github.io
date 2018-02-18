@@ -9,14 +9,26 @@
 </head>
 
 <style>
-body{
-background: url("pastelNeb1.jpg"); 
-  background-size: auto;
+html{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  background: url(pastelNeb1.jpg) no-repeat center center fixed;
+  background-size: cover;
   font:16px Helvetica;
   color: #9B2B7D;
   text-align: center;
 }
-#bgrdImage{
+body{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+}
+#background{
 width: 100%;
 height: 100%;
 position: absolute;
@@ -31,21 +43,61 @@ top: 10%;
 left: 30%;
 margin: 0;
 z-index: 1;
+transition: .5s ease;
+}
+#doorImage:hover{
+opacity: 0.0;
+}
+#doorImageOverlay{
+position: absolute;
+top: 10%;
+left: 30%;
+margin: 0;
+z-index: 1;
+transition: .5s ease;
+}
+#doorImageOverlay:hover{
+opacity: 0.0;
 }
 #storyImage{
 position: absolute;
-top: 45%;
-left: 55%;
+top: 50%;
+left: 60%;
 margin: 0;
 z-index: 1;
 transform: scale(0.5);
 }
+#dragonImage{
+position: absolute;
+top: 0%;
+left: 65%;
+margin: 0;
+z-index: 1;
+transform: scale(0.3);
+}
+#flowerImage{
+position: absolute;
+top: 30%;
+left: -10%;
+margin: 0;
+z-index: 1;
+transform: scale(0.3);
+}
 </style>
 
 <body>
-<image id="bgrdImage" src="welcomescreen/background.png"></image>
-<image id="doorImage" src="welcomescreen/door01.png"></image>
-<image id="storyImage" src="welcomescreen/stories01.png"></image>
+<span id="background"><img src="welcomescreen/background.png"></span>
+<span id="doorImage"><img src="welcomescreen/door01.png"></span>
+<span id="doorImageOverlay"><img src="welcomescreen/door02.png"></span>
+<span id="storyImage"><img src="welcomescreen/stories01.png" onmouseover="switchImage(this, 'welcomescreen/stories02.png')" onmouseout="switchImage(this, 'welcomescreen/stories01.png')"></span>
+<span id="dragonImage"><img src="welcomescreen/dragon01.png" onmouseover="switchImage(this, 'welcomescreen/dragon02.png')" onmouseout="switchImage(this, 'welcomescreen/dragon01.png')"></span>
+<span id="flowerImage"><img src="welcomescreen/flower01.png" onmouseover="switchImage(this, 'welcomescreen/flower02.png')" onmouseout="switchImage(this, 'welcomescreen/flower01.png')"></span>
 </body>
 
+<script>
+function switchImage(element, srcString)
+{
+    element.src = srcString;
+}
+</script>
 </html>
